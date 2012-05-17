@@ -1,6 +1,7 @@
 #!/usr/bin/ruby
 require 'irb/completion'
 require 'irb/ext/save-history'
+require 'pp'
 
 IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
@@ -52,3 +53,14 @@ def paste
 end
 
 load File.dirname(__FILE__) + '/.railsrc' if ($0 == 'irb' && ENV['RAILS_ENV']) || ($0 == 'script/rails' && Rails.env)
+
+class Array
+  def self.toy(n=10,&block)
+    block_given? ? Array.new(n,&block) : Array.new(n) {|i| i+1}
+  end
+end   
+class Hash
+  def self.toy(n=10)
+    Hash[Array.toy(n).zip(Array.toy(n){|c| (96+(c+1)).chr})]
+  end
+end
