@@ -41,11 +41,14 @@ plugins=(git python rake extract bundler vagrant rvm)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/home/guewen/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/guewen/.rvm/bin
+export PATH=$HOME/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/.rvm/bin
 
 export PYTHONSTARTUP=~/.pythonrc.py
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# load config files for tmuxinator
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 # use .localrc for settings specific to one system
 [[ -f ~/.localrc ]] && . ~/.localrc
