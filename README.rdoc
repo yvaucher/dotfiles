@@ -15,6 +15,7 @@ These are config files to set up a system the way I like it.
 I am running on GNU/Linux and my dotfiles include :
  - zsh (with oh-my-zsh)
  - vim
+ - tmux
  - ruby (irb, gems)
  - python 
 
@@ -22,21 +23,19 @@ The oh-my-zsh install procedure is described on :
 
   https://github.com/robbyrussell/oh-my-zsh
 
-It may be useful to install : 
+To install: 
 
-  sudo aptitude install xsel
+  xsel
 
-Python modules :
+Python modules:
 
   fancycompleter
 
-And Ruby gems :
+And Ruby gems:
 
-  gem install wirble
-  gem install looksee
-
- In order to use zsh you have to execute:
-  chsh -s /bin/zsh
+  tuxminator
+  wirble
+  looksee
 
 
 == Features
