@@ -26,7 +26,11 @@ It may be useful to install :
 
   sudo aptitude install xsel
 
-And Gems :
+Python modules :
+
+  fancycompleter
+
+And Ruby gems :
 
   gem install wirble
   gem install looksee
