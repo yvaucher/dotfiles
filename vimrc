@@ -4,6 +4,13 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" pathogen plugin to auto load plugins in bundle folder
+" https://github.com/tpope/vim-pathogen
+call pathogen#infect()
+
+" 256 colors
+set t_Co=256
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -50,7 +57,7 @@ if has("autocmd")
   au!
 
   " For all text files set 'textwidth' to 78 characters.
-  " autocmd FileType text setlocal textwidth=78
+  autocmd FileType text setlocal textwidth=78
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -63,6 +70,10 @@ if has("autocmd")
   " Automatically load .vimrc source when saved
   autocmd BufWritePost .vimrc source $MYVIMRC
 
+  autocmd FileType python set omnifunc=pythoncomplete#Complete
+  autocmd FileType python highlight OverLength ctermbg=darkgrey guibg=#592929
+  autocmd FileType python match OverLength /\%80v.*/
+
   augroup END
 
 else
@@ -71,13 +82,19 @@ else
 
 endif " has("autocmd")
 
-" if has("folding")
-  " set foldenable
-  " set foldmethod=syntax
-  " set foldlevel=1
-  " set foldnestmax=2
-  " set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
-" endif
+if has("folding")
+  set foldenable
+  set foldmethod=syntax
+  set foldlevel=1
+  set foldnestmax=2
+  set foldcolumn=2
+  set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
+
+  if has("autocmd")
+    autocmd FileType c,cpp,d,perl,java,cs set foldmethod=syntax
+    autocmd FileType python,xml set foldmethod=indent
+  endif
+endif
 
 " Softtabs, 2 spaces
 set tabstop=2
@@ -90,28 +107,11 @@ set laststatus=2
 " \ is the leader character
 let mapleader = ","
 
-" Edit the README_FOR_APP (makes :R commands work)
-map <Leader>R :e doc/README_FOR_APP<CR>
-
-" Leader shortcuts for Rails commands
-map <Leader>m :Rmodel 
-map <Leader>c :Rcontroller 
-map <Leader>v :Rview 
-map <Leader>u :Runittest 
-map <Leader>f :Rfunctionaltest 
-map <Leader>tm :RTmodel 
-map <Leader>tc :RTcontroller 
-map <Leader>tv :RTview 
-map <Leader>tu :RTunittest 
-map <Leader>tf :RTfunctionaltest 
-map <Leader>sm :RSmodel 
-map <Leader>sc :RScontroller 
-map <Leader>sv :RSview 
-map <Leader>su :RSunittest 
-map <Leader>sf :RSfunctionaltest 
-
 " Hide search highlighting
 map <Leader>h :set invhls <CR>
+" bind C-l to :nohl in order to mute
+" the highlight
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
@@ -136,6 +136,9 @@ vmap P p :call setreg('"', getreg('0')) <CR>
 " For Haml
 au! BufRead,BufNewFile *.haml         setfiletype haml
 
+" For rml
+au! BufRead,BufNewFile *.rml set ft=xml
+
 " No Help, please
 nmap <F1> <Esc>
 
@@ -148,11 +151,7 @@ imap <Tab> <C-N>
 imap <C-L> <Space>=><Space>
 
 " Display extra whitespace
-" set list listchars=tab:»·,trail:·
-
-" Edit routes
-command! Rroutes :e config/routes.rb
-command! Rschema :e db/schema.rb
+set list listchars=tab:»·,trail:·
 
 " Local config
 if filereadable(".vimrc.local")
@@ -160,12 +159,12 @@ if filereadable(".vimrc.local")
 endif
 
 " Use Ack instead of Grep when available
-if executable("ack")
-  set grepprg=ack\ -H\ --nogroup\ --nocolor\ --ignore-dir=tmp\ --ignore-dir=coverage
+if executable("ack-grep")
+  set grepprg=ack-grep\ -H\ --nogroup\ --nocolor\ --ignore-dir=tmp\ --ignore-dir=coverage
 endif
 
 " Color scheme
-" colorscheme vividchalk
+colorscheme wombat256
 " highlight NonText guibg=#060606
 " highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
@@ -205,3 +204,55 @@ function! OpenURL()
 endfunction
 map <Leader>w :call OpenURL()<CR>
 
+" mouse is active
+set mouse=a
+behave xterm
+
+" allow to save as sudo with :w!!
+cmap w!! %!sudo tee > /dev/null %
+
+" no sound bell
+set visualbell
+
+" tabs for ruby
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 sts=2
+
+" toggle display of unprintable chars
+map<C-F12> <ESC>:set list!<CR>
+" toggle auto wrap
+map<F12> <ESC>:set wrap!<CR>
+
+" keep selection when indent / unindent
+vnoremap < <gv
+vnoremap > >gv
+
+" allow copy paste accross applications
+set clipboard=unnamed
+
+" disable cross keys
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
+
+" regenerate ctags
+:nnoremap <f5> :!ctags -R<CR>
+
+" save a vim session
+:nmap <F2> :wa<Bar>exe "mksession! " . v:this_session<CR>
+
+" ignore files
+set wildignore+=*.po,*.pot,*.pyc
+
+" & is used to replay a susbstitution but does not
+" keep the flags. && keeps them, so rebind && to &
+nnoremap & :&&<Enter>
+xnoremap & :&&<Enter>
+
+" CommantT configuration
+let g:CommandTMaxFiles=20000
+let g:CommandTMatchWindowAtTop=1
