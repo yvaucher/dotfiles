@@ -36,7 +36,7 @@ class Object
 end
 
 def copy(str)
-  IO.popen('pbcopy', 'w') { |f| f << str.to_s }
+  IO.popen('xsel --clipboard --input', 'w') { |f| f << str.to_s }
 end
 
 def copy_history
@@ -48,7 +48,7 @@ def copy_history
 end
 
 def paste
-  `pbpaste`
+  `xsel --clipboard --output`
 end
 
 load File.dirname(__FILE__) + '/.railsrc' if ($0 == 'irb' && ENV['RAILS_ENV']) || ($0 == 'script/rails' && Rails.env)
