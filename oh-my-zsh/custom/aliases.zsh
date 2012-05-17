@@ -7,6 +7,13 @@ alias l="ls -lAh"
 alias ll="ls -l"
 alias la='ls -A'
 
+# less
+alias less='less --quiet'
+
+# df / du
+alias df='df --human-readable'
+alias du='du --human-readable'
+
 # git
 alias gl='git pull'
 alias gp='git push'
@@ -19,15 +26,14 @@ alias gs='git status'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 
-# rails
-alias sc='script/console'
-alias ss='script/server'
-alias sg='script/generate'
-alias a='autotest -rails'
-alias tlog='tail -f log/development.log'
-alias scaffold='script/generate nifty_scaffold'
-alias migrate='rake db:migrate db:test:clone'
-alias rst='touch tmp/restart.txt'
+# ack
+alias ack='ack-grep'
+
+# bzr
+alias bzr_up_all='for file in *; do if [ -d $file ]; then bzr up $file; fi; done'
+
+# various
+alias px='pwd | xsel'
 
 # commands starting with % for pasting from web
 alias %=' '
