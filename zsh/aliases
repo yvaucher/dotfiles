@@ -1,3 +1,6 @@
+# tmux: need this to have 256 colors
+alias tmux='tmux -2'
+
 # cd
 alias ..='cd ..'
 
