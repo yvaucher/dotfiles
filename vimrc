@@ -220,8 +220,6 @@ set smartcase
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 set tags=./tags;
 
-let g:fuf_splitPathMatching=1
-
 " Open URL
 command -bar -nargs=1 OpenURL :!open <args>
 function! OpenURL()
@@ -287,3 +285,6 @@ xnoremap & :&&<Enter>
 " CommantT configuration
 let g:CommandTMaxFiles=20000
 let g:CommandTMatchWindowAtTop=1
+
+" Stifle many interruptive prompts
+set shortmess=atI
