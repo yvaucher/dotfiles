@@ -7,8 +7,11 @@ These are config files to set up a system the way I like it.
 
   git clone git@github.com:guewen/dotfiles.git ~/.dotfiles
   cd ~/.dotfiles
+  git submodule init
+  git submodule update
   rake install
 
+  Launch vim, run :BundleInstall (or vim +BundleInstall +qall for CLI lovers)
 
 == Environment
 
@@ -40,30 +43,6 @@ And Ruby gems:
 
 
 == Features
-
-I normally place all of my coding projects in ~/code, so this directory 
-can easily be accessed (and tab completed) with the "c" command.
-
-  c railsca<tab>
-
-There is also an "h" command which behaves similar, but acts on the 
-home path.
-
-  h doc<tab>
-
-Tab completion is also added to rake and cap commands:
-
-  rake db:mi<tab>
-  cap de<tab>
-
-To speed things up, the results are cached in local .rake_tasks~ and 
-.cap_tasks~. It is smart enough to expire the cache automatically in 
-most cases, but you can simply remove the files to flush the cache.
-
-If you're using git, you'll notice the current branch name shows up in
-the prompt while in a git repository.
-
-See the other aliases in ~/.zsh/aliases
 
 If there are some shell configuration settings which you want secure or 
 specific to one system, place it into a ~/.localrc file. This will be 
