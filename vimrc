@@ -39,9 +39,6 @@ Bundle 'pythoncomplete'
 
 filetype plugin indent on     " required!
 
-" 256 colors
-set t_Co=256
-
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -194,8 +191,12 @@ if executable("ack-grep")
   set grepprg=ack-grep\ -H\ --nogroup\ --nocolor\ --ignore-dir=tmp\ --ignore-dir=coverage
 endif
 
+" 256 colors
+set t_Co=256
+
 " Color scheme
 colorscheme wombat256
+set background=dark
 " highlight NonText guibg=#060606
 " highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
