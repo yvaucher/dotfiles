@@ -20,7 +20,7 @@ I am running on GNU/Linux and my dotfiles include :
  - vim
  - tmux
  - ruby (irb, gems)
- - python 
+ - python
 
 The oh-my-zsh install procedure is described on : 
 
@@ -28,6 +28,7 @@ The oh-my-zsh install procedure is described on :
 
 To install: 
 
+  exuberant-ctags
   xsel
   ack-grep
 
