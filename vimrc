@@ -4,9 +4,40 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" pathogen plugin to auto load plugins in bundle folder
-" https://github.com/tpope/vim-pathogen
-call pathogen#infect()
+" required for vundle
+filetype off
+
+" vundle : Vim plugin manager
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+" original repos on github
+" Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'msanders/snipmate.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'ervandew/supertab'
+Bundle 'vim-scripts/The-NERD-Commenter'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-cucumber'
+Bundle 'scrooloose/syntastic'
+Bundle 'godlygeek/tabular'
+
+ " vim-scripts repos
+" Bundle 'L9'
+Bundle 'python_match'
+Bundle 'pythoncomplete'
+
+ " non github repos
+ Bundle 'git://git.wincent.com/command-t.git'
+
+filetype plugin indent on     " required!
 
 " 256 colors
 set t_Co=256
