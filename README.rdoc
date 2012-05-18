@@ -11,6 +11,9 @@ These are config files to set up a system the way I like it.
   git submodule update
   rake install
 
+  Patch the font used in terminal for Powerline :
+  https://github.com/Lokaltog/vim-powerline/tree/develop/fontpatcher
+
   Launch vim, run :BundleInstall (or vim +BundleInstall +qall for CLI lovers)
 
 == Environment
@@ -19,7 +22,7 @@ I am running on GNU/Linux and my dotfiles include :
  - zsh (with oh-my-zsh)
  - vim
  - tmux
- - ruby (irb, gems)
+ - ruby
  - python
 
 The oh-my-zsh install procedure is described on : 

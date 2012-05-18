@@ -28,6 +28,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-cucumber'
 Bundle 'scrooloose/syntastic'
 Bundle 'godlygeek/tabular'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'benmills/vimux'
 
  " vim-scripts repos
 " Bundle 'L9'
@@ -291,3 +293,6 @@ set shortmess=atI
 
 " toggle tagbar
 nmap <F8> :TagbarToggle<CR>
+
+" display fancy symbols in status bar with vim-powerline
+let g:Powerline_symbols = 'fancy'
