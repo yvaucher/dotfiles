@@ -154,7 +154,7 @@ map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
-cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+cmap <C-O> <C-R>=expand("%:p:h") . "/" <CR>
 
 " Duplicate a selection
 " Visual mode: D
@@ -217,7 +217,6 @@ set ignorecase
 set smartcase
 
 " Tags
-let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 set tags=./tags;
 
 " Open URL
@@ -288,3 +287,6 @@ let g:CommandTMatchWindowAtTop=1
 
 " Stifle many interruptive prompts
 set shortmess=atI
+
+" toggle tagbar
+nmap <F8> :TagbarToggle<CR>
