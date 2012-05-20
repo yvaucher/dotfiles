@@ -296,3 +296,10 @@ nmap <F8> :TagbarToggle<CR>
 
 " display fancy symbols in status bar with vim-powerline
 let g:Powerline_symbols = 'fancy'
+
+" add a segment in Powerline status bar which display a marker
+" when current buffer has trailing whitespaces
+call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
+
+" Syntax checker for python (flake8, pyflakes, pylint)
+let g:syntastic_python_checker = 'pylint'
