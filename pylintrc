@@ -33,7 +33,8 @@ load-plugins=
 # can either give multiple identifier separated by comma (,) or put this option
 # multiple time (only on the command line, not in the configuration file where
 # it should appear only once).
-#disable=
+# 301 = line too long, disabled for openerp where this is sadly too common
+disable=301
 
 
 [REPORTS]
@@ -180,7 +181,9 @@ indent-string='    '
 [DESIGN]
 
 # Maximum number of arguments for function / method
-max-args=5
+# default: max-args=5
+# Rised for OpenERP where cr, uid, context are part of standard signature
+max-args=8
 
 # Argument names that match this expression will be ignored. Default to name
 # with leading underscore
