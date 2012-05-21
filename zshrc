@@ -7,6 +7,7 @@ source ~/.zsh/config
 source ~/.zsh/options
 source ~/.zsh/scripts
 source ~/.zsh/tmux
+source ~/.zsh/bindkey
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
