@@ -219,7 +219,7 @@ set ignorecase
 set smartcase
 
 " Tags
-set tags=./tags;
+set tags=./tags,tags
 
 " Open URL
 command -bar -nargs=1 OpenURL :!open <args>
