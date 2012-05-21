@@ -5,7 +5,8 @@
 
 # Python code to execute, usually for sys.path manipulation such as
 # pygtk.require().
-#init-hook=
+# init-hook for openerp: when launched from inside server, add openerp path
+init-hook=import os, sys, re; s = re.search('.*/server', os.getcwd()); src_path = s.group(0); src_path and sys.path.append(src_path + "/openerp")
 
 # Profiled execution.
 profile=no
@@ -34,7 +35,7 @@ load-plugins=
 # multiple time (only on the command line, not in the configuration file where
 # it should appear only once).
 # 301 = line too long, disabled for openerp where this is sadly too common
-disable=301
+disable=C0301
 
 
 [REPORTS]
