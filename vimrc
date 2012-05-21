@@ -33,7 +33,6 @@ Bundle 'benmills/vimux'
 
  " vim-scripts repos
 " Bundle 'L9'
-Bundle 'python_match'
 Bundle 'pythoncomplete'
 
  " non github repos
@@ -211,7 +210,7 @@ let g:snippetsEmu_key = "<S-Tab>"
 
 " Tab completion options
 " (only complete to the longest unambiguous match, and show a menu)
-set completeopt=longest,menu
+set completeopt=longest,menu,preview
 set wildmode=list:longest,list:full
 set complete=.,t
 
