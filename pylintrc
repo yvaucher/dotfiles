@@ -6,7 +6,7 @@
 # Python code to execute, usually for sys.path manipulation such as
 # pygtk.require().
 # init-hook for openerp: when launched from inside server, add openerp path
-init-hook=import os, sys, re; s = re.search('.*/server', os.getcwd()); src_path = s.group(0); src_path and sys.path.append(src_path + "/openerp")
+init-hook=import os, sys, re; s = re.search('.*/server', os.getcwd()); src_path = s.group(0) if s else None; src_path and sys.path.append(src_path + "/openerp")
 
 # Profiled execution.
 profile=no
