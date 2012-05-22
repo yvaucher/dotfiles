@@ -36,7 +36,7 @@ alias ack='ack-grep'
 alias bzr_up_all='for file in *; do if [ -d $file ]; then bzr up $file; fi; done'
 
 # various
-alias px='pwd | xsel'
+alias px="pwd | tr -d '\n' | xsel"
 alias tx='tmuxinator'
 
 # commands starting with % for pasting from web
