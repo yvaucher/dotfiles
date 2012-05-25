@@ -30,6 +30,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'godlygeek/tabular'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'benmills/vimux'
+Bundle 'actionshrimp/vim-xpath'
 
  " vim-scripts repos
 " Bundle 'L9'
@@ -255,9 +256,6 @@ map<F12> <ESC>:set wrap!<CR>
 " keep selection when indent / unindent
 vnoremap < <gv
 vnoremap > >gv
-
-" allow copy paste accross applications
-set clipboard=unnamed
 
 " disable cross keys
 noremap  <Up> ""
