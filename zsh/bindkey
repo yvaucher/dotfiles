@@ -2,3 +2,9 @@ bindkey -v
 
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+
+# home key
+bindkey '^[[1~' beginning-of-line
+
+# end key
+bindkey '^[[4~' end-of-line
