@@ -31,6 +31,9 @@ Bundle 'godlygeek/tabular'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'benmills/vimux'
 Bundle 'actionshrimp/vim-xpath'
+Bundle 'vim-scripts/argtextobj.vim'
+Bundle 'kana/vim-textobj-user'
+Bundle 'michaeljsmith/vim-indent-object'
 
  " vim-scripts repos
 " Bundle 'L9'
