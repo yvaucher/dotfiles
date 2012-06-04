@@ -1,0 +1,69 @@
+snippet openerp
+	<?xml version="1.0" encoding="utf-8"?>
+	<openerp>
+	    <data noupdate="${1}">
+	        ${2}
+	    </data>
+	</openerp>
+snippet field
+	<field name="${1}"/>
+snippet notebook
+	<notebook name="${1"}>
+	    ${2}
+	</notebook>
+snippet page
+	<page name="${1}" string="${2:}">
+	    $2
+	</page
+snippet view_tree
+	<record id="view_${1}_tree" model="ir.ui.view">
+	    <field name="name">${2:}.tree</field>
+	    <field name="model">$2</field>
+	    <field name="type">tree</field>
+	    <field name="arch" type="xml">
+	        <tree string="${3}">
+	        </tree>
+	    </field>
+	</record>
+snippet view_form
+	<record id="view_${1}_form" model="ir.ui.view">
+	    <field name="name">${2:}.form</field>
+	    <field name="model">$2</field>
+	    <field name="type">form</field>
+	    <field name="arch" type="xml">
+	        <form string="${3}">
+	        </form>
+	    </field>
+	</record>
+snippet view_search
+	<record id="view_${1}_search" model="ir.ui.view">
+	    <field name="name">${2:}.search</field>
+	    <field name="model">$2</field>
+	    <field name="type">search</field>
+	    <field name="arch" type="xml">
+	        <search string="${3}">
+	        </search>
+	    </field>
+	</record>
+snippet action
+	<record id="action_${1}" model="ir.actions.act_window">
+	    <field name="name">${2}</field>
+	    <field name="type">ir.actions.act_window</field>
+	    <field name="res_model">${3}</field>
+	    <field name="view_type">form</field>
+	    <field name="view_mode">tree,form</field>
+	    <field name="search_view_id" ref="${4}"/>
+	</record>
+snippet state
+	<field name="state" widget="statusbar"
+	    statusbar_colors="{'pending':'blue'}"/>
+snippet group
+	<group colspan="4" col="${1}">
+	    ${2}
+	</group>
+snippet separator
+	<separator string="${1}" colspan"${2}"/>
+snippet domain
+	domain="[('${1}', '${2}', ${3})]"
+snippet button
+	<button name="${1}" string="${2}" states="${3}" type="object" icon="gtk-apply" />
