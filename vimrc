@@ -34,6 +34,7 @@ Bundle 'actionshrimp/vim-xpath'
 Bundle 'vim-scripts/argtextobj.vim'
 Bundle 'kana/vim-textobj-user'
 Bundle 'michaeljsmith/vim-indent-object'
+Bundle 'sophacles/vim-bundle-mako'
 
  " vim-scripts repos
 " Bundle 'L9'
