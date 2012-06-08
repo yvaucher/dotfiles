@@ -239,10 +239,6 @@ function! OpenURL()
 endfunction
 map <Leader>w :call OpenURL()<CR>
 
-" mouse is active
-set mouse=a
-behave xterm
-
 " allow to save as sudo with :w!!
 cmap w!! %!sudo tee > /dev/null %
 
