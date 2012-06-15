@@ -300,3 +300,7 @@ call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
 
 " Syntax checker for python (flake8, pyflakes, pylint)
 let g:syntastic_python_checker = 'pylint'
+
+
+" hidden files in Netrw
+let g:netrw_list_hide= '.*\.pyc$'
