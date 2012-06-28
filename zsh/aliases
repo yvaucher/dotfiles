@@ -33,6 +33,7 @@ alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG
 alias ack='ack-grep'
 
 # bzr
+alias b='bzr'
 alias bzr_up_all='for file in *; do if [ -d $file ]; then bzr up $file; fi; done'
 
 # various
