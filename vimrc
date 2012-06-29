@@ -35,6 +35,7 @@ Bundle 'vim-scripts/argtextobj.vim'
 Bundle 'kana/vim-textobj-user'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'sophacles/vim-bundle-mako'
+Bundle 'altercation/vim-colors-solarized'
 
  " vim-scripts repos
 " Bundle 'L9'
@@ -201,8 +202,8 @@ endif
 set t_Co=256
 
 " Color scheme
-colorscheme wombat256
 set background=dark
+colorscheme solarized
 " highlight NonText guibg=#060606
 " highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
