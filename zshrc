@@ -58,5 +58,8 @@ export PYTHONSTARTUP=~/.pythonrc.py
 # load config files for tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
+# load ssh agent
+[[ -s $HOME/.sshagent ]] && source $HOME/.sshagent
+
 # use .localrc for settings specific to one system
 [[ -f ~/.localrc ]] && . ~/.localrc
