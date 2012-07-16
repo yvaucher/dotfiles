@@ -16,16 +16,6 @@ These are config files to set up a system the way I like it.
 
   Launch vim, run :BundleInstall (or vim +BundleInstall +qall for CLI lovers)
 
-=== VIM plugins Specific
-
-Command-T plugin needs to compile a C extension:
-
-  cd $HOME/.dotfiles/vim/bundle/command-t
-  # must be compiled with the same ruby version
-  # than the one used by vim
-  rvm use system
-  rake make
-
 == Environment
 
 I am running on GNU/Linux and my dotfiles includes:

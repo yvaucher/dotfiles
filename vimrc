@@ -308,3 +308,8 @@ let g:syntastic_python_checker = 'pylint'
 
 " hidden files in Netrw
 let g:netrw_list_hide= '.*\.pyc$'
+
+
+" ctrlp options
+let g:ctrlp_extensions = ['tag', 'buffertag', 'mixed']
+let g:ctrlp_follow_symlinks = 1
