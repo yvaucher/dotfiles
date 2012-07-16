@@ -36,13 +36,14 @@ Bundle 'kana/vim-textobj-user'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'sophacles/vim-bundle-mako'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'kien/ctrlp.vim'
 
  " vim-scripts repos
 " Bundle 'L9'
 Bundle 'pythoncomplete'
 
  " non github repos
- Bundle 'git://git.wincent.com/command-t.git'
+ " Bundle 'git://git.wincent.com/command-t.git'
 
 filetype plugin indent on     " required!
 
@@ -294,6 +295,8 @@ nmap <F8> :TagbarToggle<CR>
 
 " display fancy symbols in status bar with vim-powerline
 let g:Powerline_symbols = 'fancy'
+" Powerline colorscheme optimized for Solarized
+let g:Powerline_colorscheme = 'skwp'
 
 " add a segment in Powerline status bar which display a marker
 " when current buffer has trailing whitespaces
