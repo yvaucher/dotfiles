@@ -38,6 +38,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-repeat'
+Bundle 'Lokaltog/vim-easymotion'
 
  " vim-scripts repos
 " Bundle 'L9'
