@@ -1,5 +1,6 @@
 
 !---- URxvt - General settings {
+URxvt*termName:                       rxvt-256color
 URxvt*:borderLess:                    true
 URxvt*cursorBlink:                    true
 URxvt*font: xft:Inconsolata-dz\ for\ Powerline:pixelsize=12:antialias=true:hinting=true
