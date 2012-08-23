@@ -37,6 +37,7 @@ Bundle 'sophacles/vim-bundle-mako'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-repeat'
 
  " vim-scripts repos
 " Bundle 'L9'
