@@ -23,7 +23,6 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'msanders/snipmate.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'ervandew/supertab'
-Bundle 'vim-scripts/The-NERD-Commenter'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-cucumber'
 Bundle 'scrooloose/syntastic'
@@ -37,6 +36,7 @@ Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'sophacles/vim-bundle-mako'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-commentary'
 
  " vim-scripts repos
 " Bundle 'L9'
@@ -318,3 +318,4 @@ let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_max_files = 0
 let g:ctrlp_working_path_mode = 0
+
