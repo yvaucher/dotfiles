@@ -34,8 +34,9 @@ load-plugins=
 # can either give multiple identifier separated by comma (,) or put this option
 # multiple time (only on the command line, not in the configuration file where
 # it should appear only once).
-# 301 = line too long, disabled for openerp where this is sadly too common
-disable=C0301
+# C0301 = line too long, disabled for openerp where this is sadly too common
+# W0142 = "Used * or ** magic"
+disable=C0301,W0142
 
 
 [REPORTS]
