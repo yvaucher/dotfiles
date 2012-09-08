@@ -5,16 +5,20 @@ These are config files to set up a system the way I like it.
 
 == Installation
 
-  git clone git@github.com:guewen/dotfiles.git ~/.dotfiles
-  cd ~/.dotfiles
-  git submodule init
-  git submodule update
-  rake install
+    git clone git@github.com:guewen/dotfiles.git ~/.dotfiles
+    cd ~/.dotfiles
+    git submodule init
+    git submodule update
+    rake install
 
   Patch the font used in terminal for Powerline :
   https://github.com/Lokaltog/vim-powerline/tree/develop/fontpatcher
 
   Launch vim, run :BundleInstall (or vim +BundleInstall +qall for CLI lovers)
+
+  If you use urxvt-unicode (the build which supports 256 colors), you have to run:
+
+    xrdb -load ~/.Xresources
 
 == Environment
 
@@ -24,6 +28,7 @@ I am running on GNU/Linux and my dotfiles includes:
  - tmux
  - ruby
  - python
+ - Xresource config for urxvt-unicode
 
 === Dependencies:
 
