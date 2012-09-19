@@ -8,6 +8,7 @@ source ~/.zsh/options
 source ~/.zsh/scripts
 source ~/.zsh/tmux
 source ~/.zsh/bindkey
+source ~/.zsh/virtualenvwrapper
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/

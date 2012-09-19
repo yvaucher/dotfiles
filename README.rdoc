@@ -32,23 +32,30 @@ I am running on GNU/Linux and my dotfiles includes:
 
 === Dependencies:
 
+Debian packages:
+
+  urxvt-unicode (with 256 colors support)
   zsh
-  vim-nox (on ubuntu, needs ruby support)
+  vim-nox
   tmux
   ruby
   python
   exuberant-ctags
   xsel
   ack-grep
-  rvm
-  oh-my-zsh
 
-The oh-my-zsh install procedure is described on:
 
-  https://github.com/robbyrussell/oh-my-zsh
+Standalone installations
+
+  rvm (https://rvm.io/rvm/install/)
+  oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh)
+
 
 Python modules:
 
+  pip
+  virtualenv
+  virtualenvwrapper
   fancycompleter
 
 And Ruby gems:
@@ -68,3 +75,9 @@ There are several features enabled in Ruby's irb including history and
 completion. Many convenience methods are added as well such as "ri"
 which can be used to get inline documentation in IRB. See irbrc and
 railsrc files for details.
+
+
+== TODO
+
+Autoinstall/checks of packages / python modules
+
