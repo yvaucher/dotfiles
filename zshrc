@@ -15,7 +15,10 @@ source ~/.zsh/virtualenvwrapper
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="bira"
+#ZSH_THEME="bira"
+ZSH_THEME="agnoster"
+# agnoster theme hides user when logged myself
+DEFAULT_USER="gbaconnier"
 
 export EDITOR='vim'
 
