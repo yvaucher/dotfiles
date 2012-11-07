@@ -1,3 +1,4 @@
 --type-set=mako=.mako
 --type-set=rml=.rml
 --type-set=csv=.csv
+--type-set=feature=.feature
