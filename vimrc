@@ -39,6 +39,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-repeat'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'sjl/gundo.vim'
 
  " vim-scripts repos
 " Bundle 'L9'
@@ -320,4 +321,9 @@ let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_max_files = 0
 let g:ctrlp_working_path_mode = 0
+
+" display gundo graph
+nnoremap <F6> :GundoToggle<CR>
+" the preview is below the current window
+let g:gundo_preview_bottom = 1
 
