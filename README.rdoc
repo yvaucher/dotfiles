@@ -36,7 +36,7 @@ Debian packages:
 
   urxvt-unicode (with 256 colors support)
   zsh
-  vim-nox
+  vim-gnome or vim-gtk (to have the X11 support)
   tmux
   ruby
   python
