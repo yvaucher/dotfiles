@@ -275,9 +275,6 @@ noremap! <Right> <Esc>
 " regenerate ctags
 :nnoremap <f5> :!ctags -R<CR>
 
-" save a vim session
-:nmap <F2> :wa<Bar>exe "mksession! " . v:this_session<CR>
-
 " ignore files
 set wildignore+=*.po,*.pot,*.pyc
 
@@ -326,4 +323,7 @@ let g:ctrlp_working_path_mode = 0
 nnoremap <F6> :GundoToggle<CR>
 " the preview is below the current window
 let g:gundo_preview_bottom = 1
+
+" save a vim session
+:nnoremap <F8> :wa<Bar>exe "mksession! " . v:this_session<CR>
 
