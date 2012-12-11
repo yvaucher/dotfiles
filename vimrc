@@ -40,10 +40,11 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-repeat'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'sjl/gundo.vim'
+Bundle 'davidhalter/jedi-vim'
 
  " vim-scripts repos
 " Bundle 'L9'
-Bundle 'pythoncomplete'
+" Bundle 'pythoncomplete'
 
  " non github repos
  " Bundle 'git://git.wincent.com/command-t.git'
