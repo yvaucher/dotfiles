@@ -41,6 +41,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'sjl/gundo.vim'
 Bundle 'davidhalter/jedi-vim'
+Bundle 'vim-scripts/DrawIt'
 
  " vim-scripts repos
 " Bundle 'L9'
