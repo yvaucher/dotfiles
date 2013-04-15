@@ -1,11 +1,12 @@
-= Guewen Baconnier Dot Files
+= Yannick Vaucher Dot Files
 
 These are config files to set up a system the way I like it.
 
 
+
 == Installation
 
-    git clone git@github.com:guewen/dotfiles.git ~/.dotfiles
+    git clone git@github.com:yvaucher/dotfiles.git ~/.dotfiles
     cd ~/.dotfiles
     git submodule init
     git submodule update
@@ -27,7 +28,7 @@ These are config files to set up a system the way I like it.
 == Environment
 
 I am running on GNU/Linux and my dotfiles includes:
- - zsh (with oh-my-zsh)
+ - urxvt
  - vim
  - tmux
  - ruby
@@ -39,7 +40,6 @@ I am running on GNU/Linux and my dotfiles includes:
 Debian packages:
 
   urxvt-unicode (with 256 colors support)
-  zsh
   vim-gnome or vim-gtk (to have the X11 support)
   tmux
   ruby
@@ -52,7 +52,6 @@ Debian packages:
 Standalone installations
 
   rvm (https://rvm.io/rvm/install/)
-  oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh)
 
 
 Python modules:
@@ -65,8 +64,6 @@ Python modules:
 And Ruby gems:
 
   tmuxinator
-  wirble
-  looksee
 
 
 == Features
