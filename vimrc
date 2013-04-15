@@ -1,5 +1,3 @@
-" based on http://github.com/jferris/config_files/blob/master/vimrc
-
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
@@ -20,328 +18,239 @@ Bundle 'gmarik/vundle'
 " original repos on github
 " Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'msanders/snipmate.vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'ervandew/supertab'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-cucumber'
-Bundle 'scrooloose/syntastic'
-Bundle 'godlygeek/tabular'
-" Bundle 'Lokaltog/vim-powerline'
-Bundle 'benmills/vimux'
-Bundle 'actionshrimp/vim-xpath'
-Bundle 'vim-scripts/argtextobj.vim'
-Bundle 'kana/vim-textobj-user'
-Bundle 'michaeljsmith/vim-indent-object'
-Bundle 'sophacles/vim-bundle-mako'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-repeat'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'sjl/gundo.vim'
-" Bundle 'davidhalter/jedi-vim'
-Bundle 'vim-scripts/DrawIt'
-" Bundle 'benzheren/vim-python'
-Bundle 'klen/python-mode'
+Bundle 'Lokaltog/vim-powerline'
 
- " vim-scripts repos
+" vim-scripts repos
 " Bundle 'L9'
-" Bundle 'pythoncomplete'
+Bundle 'pythoncomplete'
 
- " non github repos
- " Bundle 'git://git.wincent.com/command-t.git'
+" Comments
+Bundle 'The-NERD-Commenter'
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 filetype plugin indent on     " required!
 
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
-set nobackup
-set nowritebackup
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
-
-" Don't use Ex mode, use Q for formatting
-map Q gq
-
-" This is an alternative that also works in block mode, but the deleted
-" text is lost and it only works for putting the current register.
-"vnoremap p "_dp
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-  set hlsearch
-endif
-
-" Switch wrap off for everything
-set nowrap
-
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
-
-  " Set File type to 'text' for files ending in .txt
-  autocmd BufNewFile,BufRead *.txt setfiletype text
-
-  " Enable soft-wrapping for text files
-  autocmd FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
-
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
-
-  " Automatically load .vimrc source when saved
-  autocmd BufWritePost .vimrc source $MYVIMRC
-
-  autocmd FileType python set omnifunc=pythoncomplete#Complete
-  autocmd FileType python highlight OverLength ctermbg=darkgrey guibg=#592929
-  autocmd FileType python match OverLength /\%80v.*/
-
-  augroup END
-
-else
-
-  set autoindent		" always set autoindenting on
-
-endif " has("autocmd")
-
-if has("folding")
-  set foldenable
-  set foldmethod=syntax
-  set foldlevel=1
-  set foldnestmax=3
-  set foldcolumn=2
-  set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
-
-  if has("autocmd")
-    autocmd FileType c,cpp,d,perl,java,cs set foldmethod=syntax
-    autocmd FileType python,xml set foldmethod=indent
-  endif
-endif
-
-" Softtabs, 2 spaces
-set tabstop=2
-set shiftwidth=2
-set expandtab
-
-" Always display the status line
-set laststatus=2
-
-" \ is the leader character
-let mapleader = ","
-
-" Hide search highlighting
-map <Leader>h :set invhls <CR>
-" bind C-l to :nohl in order to mute
-" the highlight
-nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
-
-" Opens an edit command with the path of the currently edited file filled in
-" Normal mode: <Leader>e
-map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-
-" Opens a tab edit command with the path of the currently edited file filled in
-" Normal mode: <Leader>t
-map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
-
-" Inserts the path of the currently edited file into a command
-" Command mode: Ctrl+P
-cmap <C-O> <C-R>=expand("%:p:h") . "/" <CR>
-
-" Duplicate a selection
-" Visual mode: D
-vmap D y'>p
-
-" Press Shift+P while in visual mode to replace the selection without
-" overwriting the default register
-vmap P p :call setreg('"', getreg('0')) <CR>
-
-" For Haml
-au! BufRead,BufNewFile *.haml         setfiletype haml
-
-" For rml
-au! BufRead,BufNewFile *.rml set ft=xml
-
-" No Help, please
-nmap <F1> <Esc>
-
-" Press ^F from insert mode to insert the current file name
-imap <C-F> <C-R>=expand("%")<CR>
-
-" Maps autocomplete to tab
-imap <Tab> <C-N>
-
-imap <C-L> <Space>=><Space>
-
-" Display extra whitespace
-set list listchars=tab:»·,trail:·
-
-" Local config
-if filereadable(".vimrc.local")
-  source .vimrc.local
-endif
-
-" Use Ack instead of Grep when available
-if executable("ack-grep")
-  set grepprg=ack-grep\ -H\ --nogroup\ --nocolor\ --ignore-dir=tmp\ --ignore-dir=coverage
-endif
-
-" 256 colors
-set t_Co=256
-
-" Color scheme
-set background=dark
-colorscheme solarized
-" highlight NonText guibg=#060606
-" highlight Folded  guibg=#0A0A0A guifg=#9090D0
-
-" Numbers
-set number
-set numberwidth=5
-
-" Snippets are activated by Shift+Tab
-let g:snippetsEmu_key = "<S-Tab>"
-
-" Tab completion options
-" (only complete to the longest unambiguous match, and show a menu)
-set completeopt=longest,menu,preview
-set wildmode=list:longest,list:full
-set complete=.,t
-
-" case only matters with mixed case expressions
+" Highlight search terms...
+set hlsearch
+set incsearch " ...dynamically as they are typed.
 set ignorecase
 set smartcase
 
-" Tags
-set tags=./tags,tags
+" tabs and indent
+set tw=0
+set sw=4
+set sts=4
 
-" Open URL
-command -bar -nargs=1 OpenURL :!open <args>
-function! OpenURL()
-  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;:]*')
-  echo s:uri
-  if s:uri != ""
-	  exec "!open \"" . s:uri . "\""
-  else
-	  echo "No URI found in line."
-  endif
-endfunction
-map <Leader>w :call OpenURL()<CR>
+set cindent
+set smartindent
+set autoindent
+set expandtab
+
+syntax on                           " syntax highlighing
+
+syn sync minlines=300
+
+set number
+
+
+" Theme
+colorscheme wombat256
+
+" display tab and trailing as .
+set list listchars=tab:»·,trail:.
+"set listchars=tab:\|\ ,trail:.,extends:>,precedes:<,eol:$
+
+filetype on
+filetype plugin indent on    " enable loading indent file for filetype
+
+set laststatus=2
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ [BUF=%n]\ [%{&fo}]
+
+set mouse=a
+behave xterm
+
+set backspace=indent,eol,start
 
 " allow to save as sudo with :w!!
 cmap w!! %!sudo tee > /dev/null %
 
-" no sound bell
+set t_Co=256
+
+" font by default for gvim
+if has('gui_running')
+    set guifont=DejaVu\ Sans\ Mono\ Book\ 9
+endif
+
+"display more context
+set scrolloff=3
+
 set visualbell
 
-" tabs for ruby
+" pathogen plugin to auto load plugins in bundle folder
+" https://github.com/tpope/vim-pathogen
+call pathogen#infect()
+
+" ack
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+nmap <leader>a <Esc>:Ack!
+
+
+au! BufRead,BufNewFile *.rml set ft=xml
+
+map<C-F12> <ESC>:set list!<CR>
+map<F12> <ESC>:set wrap!<CR>
+au BufRead .irbrc set ft=ruby
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 sts=2
 
-" toggle display of unprintable chars
-map<C-F12> <ESC>:set list!<CR>
-" toggle auto wrap
-map<F12> <ESC>:set wrap!<CR>
+au! BufRead,BufNewFile *.haml set ft=haml
+au! BufRead,BufNewFile *.sass set ft=sass
+au! BufRead,BufNewFile .openerprc set ft=cfg
 
-" keep selection when indent / unindent
+" PgSQL
+au BufNewFile,BufRead *.pgsql setf pgsql
+au BufRead /tmp/psql.edit.* set syntax=pgsql
+
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+
 vnoremap < <gv
 vnoremap > >gv
 
-" disable cross keys
-noremap  <Up> ""
-noremap! <Up> <Esc>
-noremap  <Down> ""
-noremap! <Down> <Esc>
-noremap  <Left> ""
-noremap! <Left> <Esc>
-noremap  <Right> ""
-noremap! <Right> <Esc>
+"" Syntastic
+"let g:syntastic_python_checker = 'pyflakes-2.6'
+"let g:syntastic_check_on_open=1
+""let g:syntastic_auto_loc_list=1
+"let g:syntastic_loc_list_height=5
+"let g:syntastic_stl_format = '[SYNTAX=%E{E:%e}%B{/}%W{W:%w}]'
 
-" regenerate ctags
-:nnoremap <f5> :!ctags -R<CR>
+set backupdir=/tmp
+set directory=/tmp
 
-" ignore files
-set wildignore+=*.po,*.pot,*.pyc
+set nowrap
 
-" & is used to replay a susbstitution but does not
-" keep the flags. && keeps them, so rebind && to &
-nnoremap & :&&<Enter>
-xnoremap & :&&<Enter>
+" {{{1 folding (see :h folding)
+" show all folds closed
+set foldenable
+" fold on markers tripple {
+set foldmethod=marker
+autocmd FileType c,cpp,d,perl,java,cs set foldmethod=syntax
+autocmd FileType python,xml set foldmethod=indent
+set foldcolumn=4
+set foldlevel=0
 
-" CommantT configuration
-let g:CommandTMaxFiles=20000
-let g:CommandTMatchWindowAtTop=1
+"set foldmethod=indent
+highlight Folded ctermfg=6 ctermbg=0
+highlight FoldColumn ctermfg=6 ctermbg=0
+
+map gf :tabedit <cfile><CR>
+
+python << EOL
+import vim
+import sys
+import os
+def EvaluateCurrentRange():
+    eval(compile('\n'.join(vim.current.range),'','exec'), globals())
+def CheckPy():
+    eval(compile('\n'.join(vim.current.buffer), '', 'exec'), globals()) 
+sys.path.append("/usr/local/lib/python2.6/site-packages")
+EOL
+
+map <C-h> :py EvaluateCurrentRange()
+map <C-j> :py CheckPy()
+
+map <silent><A-Right> :tabnext<CR>
+map <silent><A-Left> :tabprevious<CR>
+map <C-Down> <C-e>
+map <C-Up> <C-y>
+noremap <A-S-Left> <C-w><
+noremap <A-S-Right> <C-w>>
+noremap <A-S-Up> <C-w>+
+noremap <A-S-Down> <C-w>-
+noremap <silent><C-S-Left> :execute 'tabmove ' . (tabpagenr()-2)<CR>
+noremap <silent><C-S-Right> :execute 'tabmove ' . tabpagenr()<CR>
+
+map <M-q> :bd<CR>
+
+cabbr tb tab ball
+cabbr td tab delete
+
+"for activate the page down, up, etc, please comment the line below
+"map <Left> <Esc>
+"map <Down> <Esc>
+"map <Up> <Esc>
+"map <Right> <Esc>
+"imap <Left> <Esc>
+"imap <Down> <Esc>
+"imap <Up> <Esc>
+"imap <Right> <Esc>
+
+"
+" Uncomment this if you want to use pylint checker when you save your file
+"
+autocmd FileType python compiler pylint
+"
+" Above is realized with :Pylint command. To disable calling Pylint every
+" time a buffer is saved put into .vimrc file
+"
+let g:pylint_onwrite = 0
+"
+" Displaying code rate calculated by Pylint can be avoided by setting
+"
+"     let g:pylint_show_rate = 0
+"
+" Openning of QuickFix window can be disabled with
+"
+"     let g:pylint_cwindow = 0
+
+"
+" uncomment this if you want use the 79 character max
+"
+autocmd FileType python highlight OverLength ctermbg=darkgrey guibg=#592929
+autocmd FileType python match OverLength /\%80v.*/
+" If uncommented, autowrap lines at 79 chars
+" autocmd FileType python set textwidth=79
+"
+
+" allow copy paste accross applications
+set clipboard=unnamed
+
+" deactivate arrows
+"noremap  <Up> ""
+"noremap! <Up> <Esc>
+"noremap  <Down> ""
+"noremap! <Down> <Esc>
+"noremap  <Left> ""
+"noremap! <Left> <Esc>
+"noremap  <Right> ""
+"noremap! <Right> <Esc>
+
+" <Leader> is "\"... but on qwertz keyboard it's better to use "," wich is more
+" accessible
+:let mapleader = ","
 
 " Stifle many interruptive prompts
 set shortmess=atI
 
-" toggle tagbar
+" regenerate ctags
+:nnoremap <f5> :!ctags -R<CR>
+
+let g:pep8_map='<leader>8'
+
 nmap <F8> :TagbarToggle<CR>
 
-" display fancy symbols in status bar with vim-powerline
-" let g:Powerline_symbols = 'fancy'
-" Powerline colorscheme optimized for Solarized
-" let g:Powerline_colorscheme = 'skwp'
+if has("autocmd")
+    filetype indent on
+endif
 
-" add a segment in Powerline status bar which display a marker
-" when current buffer has trailing whitespaces
-" call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
-"
-" disable syntastic because checkers are already in python-mode
-let g:loaded_python_syntax_checker = 1
-" Syntax checker for python (flake8, pyflakes, pylint)
-"let g:syntastic_python_checker = 'pylint'
-let g:syntastic_python_checker = ''
+:nmap <F2> :wa<Bar>exe "mksession! " . v:this_session<CR>
 
+" CtrlP config
+" default key mapping
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_root_markers = ['.ctrlp']
 
-" hidden files in Netrw
-let g:netrw_list_hide= '.*\.pyc$'
+set wildignore+=*.po,*.pot,*.pyc
 
-
-" ctrlp options
-let g:ctrlp_extensions = ['tag', 'buffertag', 'mixed']
-let g:ctrlp_follow_symlinks = 1
-let g:ctrlp_max_height = 20
-let g:ctrlp_match_window_bottom = 0
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_max_files = 0
-let g:ctrlp_working_path_mode = 0
-
-" display gundo graph
-nnoremap <F6> :GundoToggle<CR>
-" the preview is below the current window
-let g:gundo_preview_bottom = 1
-
-" save a vim session
-:nnoremap <F8> :wa<Bar>exe "mksession! " . v:this_session<CR>
-
-" highlight the current line when the current mode is Insert
-autocmd InsertEnter,InsertLeave * set cul!
-
-" python-mode
-let g:pymode_lint_checker = "pylint,pep8,mccabe"
-
-" Autoremove unused whitespaces
-let g:pymode_utils_whitespaces = 0
-
-" Auto open cwindow if errors be finded
-let g:pymode_lint_cwindow = 0
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+let Powerline_symbols = 'fancy'
