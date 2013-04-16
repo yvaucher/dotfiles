@@ -40,7 +40,6 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-awful.util.spawn_with_shell("cairo-compmgr &")
 beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 
 
