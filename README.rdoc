@@ -17,7 +17,7 @@ These are config files to set up a system the way I like it.
 
   Launch vim, run :BundleInstall (or vim +BundleInstall +qall for CLI lovers)
 
-  If you use urxvt-unicode (the build which supports 256 colors), you have to run:
+  For use of urxvt-unicode (the build which supports 256 colors), the load of colors is set inside awesome rc.lua:
 
     xrdb -load ~/.Xresources
 
