@@ -1,10 +1,25 @@
+!   .Xresources file
+!   Man pages: xrdb, Xsession
+!
+! --------------------------------------------
+! Note that $HOME/.Xdefaults is a relic from
+! X Version 10 (and  X11R1)  days, before
+! app-defaults  files were implemented.
+! It has been deprecated for over ten years
+! .Xresources should be used instead.
+! --------------------------------------------
+
+!## transparency stuff
+URxvt.inheritPixmap: false
+URxvt*transparent: false
+URxvt*depth: 32
 
 !---- URxvt - General settings {
 URxvt*termName:                       rxvt-256color
 URxvt*:borderLess:                    true
 URxvt*cursorBlink:                    true
 !URxvt*font: xft:Inconsolata-dz\ for\ Powerline:pixelsize=12:antialias=true:hinting=true
-URxvt*font: xft:Droid\ Sans\ Mono\ for\ Powerline:style=Regular:pixelsize=13:antialias=true:hinting=true
+URxvt*font: xft:Droid\ Sans\ Mono\ for\ Powerline:style=Regular:pixelsize=11:antialias=true:hinting=true
 URxvt*jumpScroll:                     true
 URxvt*scrollBar:                      false
 URxvt*scrollTtyOutput:                false
@@ -12,7 +27,7 @@ URxvt*scrollTtyKeypress:              true
 URxvt*urgentOnBell:                   true
 URxvt*visualBell:                     false
 URxvt*perl-ext-common:                default,matcher
-URxvt*urlLauncher: firefox
+URxvt*urlLauncher:                    google-chrome
 URxvt*matcher.button:                 1
 
 !---- Light URxvt (Solarized Light, 11pt)
@@ -43,20 +58,27 @@ URxvt*pointerColorBackground:         #586e75
 URxvt*pointerColorForeground:         #93a1a1
 URxvt*colorUL:                        #859900
 URxvt*colorBD:                        #268bd2
-URxvt*color0:                         #073642
-URxvt*color8:                         #002b36
-URxvt*color1:                         #dc322f
-URxvt*color9:                         #cb4b16
-URxvt*color2:                         #859900
-URxvt*color10:                        #586e75
-URxvt*color3:                         #b58900
-URxvt*color11:                        #657b83
-URxvt*color4:                         #268bd2
-URxvt*color12:                        #839496
-URxvt*color5:                         #d33682
-URxvt*color13:                        #6c71c4
-URxvt*color6:                         #2aa198
-URxvt*color14:                        #93a1a1
-URxvt*color7:                         #eee8d5
-URxvt*color15:                        #fdf6e3
-
+! black
+URxvt*color0  : #2E3436
+URxvt*color8  : #555753
+! red
+URxvt*color1  : #a31604
+URxvt*color9  : #c60001
+! green
+URxvt*color2  : #447241
+URxvt*color10 : #27a343
+! yellow
+URxvt*color3  : #c1951a
+URxvt*color11 : #d5a30e
+! blue
+URxvt*color4  : #425387
+URxvt*color12 : #4a5a8d
+! magenta
+URxvt*color5  : #965d98
+URxvt*color13 : #893c8c
+! cyan
+URxvt*color6  : #06989A
+URxvt*color14 : #12bccb
+! white
+URxvt*color7  : #D3D7CF
+URxvt*color15 : #EEEEEC
