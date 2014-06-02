@@ -26,6 +26,18 @@ Bundle 'pythoncomplete'
 
 " Comments
 Bundle 'The-NERD-Commenter'
+Bundle 'FredKSchott/CoVim.git'
+
+" CSV edition
+Bundle 'chrisbra/csv.vim'
+
+" Table edition for Gherkin
+Bundle 'junegunn/vim-easy-align'
+
+" PEP8
+Bundle 'nvie/vim-flakes8'
+
+"let g:flake8_max_line_length=99
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
@@ -103,6 +115,8 @@ map<F12> <ESC>:set wrap!<CR>
 au BufRead .irbrc set ft=ruby
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 sts=2
 
+autocmd FileType xml setlocal shiftwidth=2 tabstop=2 sts=2
+
 au! BufRead,BufNewFile *.haml set ft=haml
 au! BufRead,BufNewFile *.sass set ft=sass
 au! BufRead,BufNewFile .openerprc set ft=cfg
@@ -141,6 +155,10 @@ set foldlevel=0
 "set foldmethod=indent
 highlight Folded ctermfg=6 ctermbg=0
 highlight FoldColumn ctermfg=6 ctermbg=0
+
+"toggle fold with space
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
 
 map gf :tabedit <cfile><CR>
 
@@ -184,15 +202,15 @@ cabbr td tab delete
 "imap <Up> <Esc>
 "imap <Right> <Esc>
 
-"
+" REPLACED BY flake8
 " Uncomment this if you want to use pylint checker when you save your file
 "
-autocmd FileType python compiler pylint
+"autocmd FileType python compiler pylint
 "
 " Above is realized with :Pylint command. To disable calling Pylint every
 " time a buffer is saved put into .vimrc file
 "
-let g:pylint_onwrite = 0
+"let g:pylint_onwrite = 0
 "
 " Displaying code rate calculated by Pylint can be avoided by setting
 "
@@ -249,6 +267,7 @@ endif
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_root_markers = ['.ctrlp']
+let g:ctrlp_max_height = 30
 
 set wildignore+=*.po,*.pot,*.pyc
 
