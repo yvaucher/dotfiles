@@ -197,9 +197,8 @@ exec sh ~/.fehbg &
 
 
 # define applications
-set $webmail "google-chrome --new-window --profile-directory=Default https://mail.google.com/mail/ca"
+set $webmail "firefox --new-window --profile-directory=Default https://mail.google.com/mail/ca"
 set $chatter xchat
-set $twitter "google-chrome --new-window --profile-directory=\'Yannick\' http://twitter.com"
 set $time_tracker hamster-time-tracker
 set $player rhythmbox
 
