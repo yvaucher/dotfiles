@@ -22,26 +22,25 @@ These are config files to set up a system the way I like it.
 
     xrdb -load ~/.Xresources
 
-  The jedi-vim plugin needs a python module. You need to install the jedi egg
-  if you want a system-wide installation or launch
-  `git submodule update --init` in `~/.dotfiles/vim/bundle/jedi-vim/`
 
 == Environment
 
 I am running on GNU/Linux and my dotfiles includes:
+ - i3
  - urxvt
- - vim
+ - neovim
  - tmux
- - ruby
+ - tmuxinator
  - python
  - Xresource config for urxvt-unicode
+ - ruby
 
 === Dependencies:
 
 Debian packages:
 
   urxvt-unicode (with 256 colors support)
-  vim-gnome or vim-gtk (to have the X11 support)
+  nvim
   tmux
   ruby
   python
@@ -61,10 +60,11 @@ Python modules:
   virtualenv
   virtualenvwrapper
   fancycompleter
+  powerline-status
 
 And Ruby gems:
 
-  tmuxinator
+  tmuxinator (version 0.6.9)
 
 
 == Features
