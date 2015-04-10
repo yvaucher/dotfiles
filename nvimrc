@@ -22,6 +22,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 " TextMate like snippets
 Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 
 " replaces powerline
 Plugin 'bling/vim-airline'
@@ -224,3 +225,12 @@ let g:ctrlp_root_markers = ['.ctrlp']
 let g:ctrlp_max_height = 30
 
 set wildignore+=*.po,*.pot,*.pyc
+
+imap ss <esc>a<Plug>snipMateNextOrTrigger
+smap ss <Plug>snipMateNextOrTrigger
+
+let g:snips_author = 'Yannick Vaucher'
+let g:snips_email = 'yannick.vaucher@camptocamp.com'
+let g:snips_company = 'Camptocamp'
+let g:snips_full_company = 'Camptocamp SA'
+let g:snips_company_website = 'www.camptocamp.com'
