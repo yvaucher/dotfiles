@@ -1,5 +1,3 @@
-snippet pdb
-	import pdb; pdb.set_trace()
 snippet vpdb
 	import vimpdb; vimpdb.set_trace()
 snippet pudb
@@ -10,39 +8,25 @@ snippet utf8
 #Snippets for Odoo OCA addons
 snippet agpl
 	# -*- coding: utf-8 -*-
-	#
-	#    Author: `g:snips_author`
-	#    Copyright `strftime("%Y")` `g:snips_full_company`
-	#
-	#    This program is free software: you can redistribute it and/or modify
-	#    it under the terms of the GNU Affero General Public License as
-	#    published by the Free Software Foundation, either version 3 of the
-	#    License, or (at your option) any later version.
-	#
-	#    This program is distributed in the hope that it will be useful,
-	#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-	#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	#    GNU Affero General Public License for more details.
-	#
-	#    You should have received a copy of the GNU Affero General Public License
-	#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-	#
+	# Copyright `strftime("%Y")` `g:snips_full_company`
+	# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl)
 
 snippet __openerp__
-	{'name' : '${1:name}',
-	 'version' : '${2:version}',
-	 'author' : '`g:snips_company`,Odoo Community Association (OCA)',
+	{'name': '${1:name}',
+	 'summary': "",
+	 'version': '${2:version}',
+	 'author': '`g:snips_company`,Odoo Community Association (OCA)',
 	 'maintainer': '`g:snips_company`',
 	 'license': 'AGPL-3',
 	 'category': '${3:category}',
 	 'complexity': "${4:complexity}",  # easy, normal, expert
-	 'depends' : [${5:depends}],
+	 'depends': [${5:depends}],
 	 'website': '`g:snips_company_website`',
 	 'data': [],
 	 'test': [],
 	 'installable': True,
 	 'auto_install': False,
-	}
+	 }
 
 snippet Model
 	class ${1:name}(models.Model):
@@ -56,41 +40,53 @@ snippet TransientModel
 
 	    ${3}
 
-snippet Boolean
-	    ${1:name} = fields.Boolean(
-	        {2}
-	        help=${3:help}
-	    )
+snippet Boolean Odoo Boolean Field
+	${1:name} = fields.Boolean(
+	    {2}
+	    help=${3:help}
+	)
 
-snippet Char
-	    ${1:name} = fields.Char(
-	        {2}
-	    )
+snippet Integer Odoo Interger Field
+	${1:name} = fields.Integer(
+	    compute='${2:_get_$1}',
+	    {2}
+	)
 
-snippet Date
-	    ${1:name} = fields.Date(
-	        {2}
-	    )
+snippet Float Odoo Float Field
+	${1:name} = fields.Float(
+	    compute='${2:_get_$1}',
+	    {2}
+	)
 
-snippet Datetime
-	    ${1:name} = fields.Datetime(
-	        {2}
-	    )
+snippet Char Odoo Char Field
+	${1:name} = fields.Char(
+	    {2}
+	)
 
-snippet Many2one
-	    ${1:name} = fields.Many2one(
-	        comodel_name={2:model_name},
-	        {2}
-	    )
+snippet Date Odoo Date Field
+	${1:name} = fields.Date(
+	    {2}
+	)
 
-snippet One2many
-	    ${1:name} = fields.One2many(
-	        comodel_name={2:model_name},
-	        {2}
-	    )
+snippet Datetime Odoo Datetime Field
+	${1:name} = fields.Datetime(
+	    {2}
+	)
 
-snippet Many2many
-	    ${1:name} = fields.Many2many(
-	        comodel_name={2:model_name},
-	        {2}
-	    )
+snippet Many2one Odoo Many2one Field
+	${1:name} = fields.Many2one(
+	    comodel_name='{2:model_name}',
+	    {2}
+	)
+
+snippet One2many Odoo One2many Field
+	${1:name} = fields.One2many(
+	    comodel_name='{2:model_name}',
+	    {2}
+	)
+
+snippet Many2many Odoo Many2many Field
+	${1:name} = fields.Many2many(
+	    comodel_name='{2:model_name}',
+	    {2}
+	)
