@@ -27,10 +27,10 @@ These are config files to set up a system the way I like it.
 
 I am running on GNU/Linux and my dotfiles includes:
  - i3
- - urxvt
- - neovim
+ - urxvt-unicode (with 256 colors support)
  - tmux
- - tmuxinator
+ - tmuxp
+ - neovim
  - python
  - Xresource config for urxvt-unicode
  - ruby
@@ -39,14 +39,17 @@ I am running on GNU/Linux and my dotfiles includes:
 
 Debian packages:
 
-  urxvt-unicode (with 256 colors support)
-  nvim
+  i3
+  i3status
+  rxvt-unicode-256color
   tmux
-  ruby
-  python
+  neovim
+  python-dev
+  python-pip
   exuberant-ctags
   xsel
   ack-grep
+  ruby
 
 
 Standalone installations
@@ -57,10 +60,12 @@ Standalone installations
 Python modules:
 
   pip
+  flake8
   virtualenv
   virtualenvwrapper
   fancycompleter
   powerline-status
+  tmuxp
 
 And Ruby gems:
 
@@ -81,5 +86,5 @@ railsrc files for details.
 
 == TODO
 
-Autoinstall/checks of packages / python modules
+Autoinstall
 
