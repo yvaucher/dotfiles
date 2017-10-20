@@ -205,13 +205,18 @@ nmap <F8> :TagbarToggle<CR>
 set wildignore+=*.po,*.pot,*.pyc
 set wildmenu
 
+" Plugins {{{
+
+" YCM {{{
 " make YCM compatible with UltiSnips (using supertab)
 " http://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme/22253548#22253548
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 
 let g:SuperTabDefaultCompletionType = '<C-tab>'
+" }}}
 
+" UltiSnips {{{
 let g:UltiSnipsExpendTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<Right>"
 let g:UltiSnipsJumpBackwardTrigger = "<Left>"
@@ -222,3 +227,6 @@ let g:snips_email = 'yannick.vaucher@camptocamp.com'
 let g:snips_company = 'Camptocamp'
 let g:snips_full_company = 'Camptocamp SA'
 let g:snips_company_website = 'www.camptocamp.com'
+" }}}
+
+" }}}
