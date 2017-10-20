@@ -72,7 +72,9 @@ set expandtab
 
 syntax on                           " syntax highlighing
 
-syntax sync minlines=300
+" Set hightlighting start on more than the default 50 lines
+" especially for long docstring that mess with the highlight
+syntax sync minlines=400
 
 set number
 
