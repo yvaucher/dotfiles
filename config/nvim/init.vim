@@ -52,11 +52,13 @@ filetype plugin indent on     " required!
 " accessible
 :let mapleader = ","
 
+" Search {{{
 " Highlight search terms...
 set hlsearch
 set incsearch " ...dynamically as they are typed.
 set ignorecase
 set smartcase
+" }}}
 
 " tabs and indent
 set tw=0
@@ -103,7 +105,6 @@ colorscheme wombat256mod
 set list listchars=tab:»·,trail:.
 
 "display more context
-"
 set scrolloff=3
 
 set visualbell
@@ -168,22 +169,6 @@ vnoremap <Space> zf
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 nmap <leader>a <Esc>:Ack!
 
-
-python << EOL
-import vim
-import sys
-import os
-def EvaluateCurrentRange():
-    eval(compile('\n'.join(vim.current.range),'','exec'), globals())
-def CheckPy():
-    eval(compile('\n'.join(vim.current.buffer), '', 'exec'), globals())
-sys.path.append("/usr/local/lib/python2.7/site-packages")
-EOL
-
-map <C-h> :py EvaluateCurrentRange()
-map <C-j> :py CheckPy()
-
-
 " {{{ Vim Tabs and windows
 
 map gf :tabedit <cfile><CR>
@@ -201,21 +186,14 @@ noremap <silent><C-S-Right> :execute 'tabmove ' . tabpagenr()<CR>
 
 " }}}
 
-" allow copy paste accross applications
-set clipboard=unnamed
-
+" allow copy paste accross application
+set clipboard+=unnamed
 
 " Stifle many interruptive prompts
 set shortmess=atI
 
 " regenerate ctags
 :nnoremap <f5> :!ctags -R<CR>
-
-"let g:pep8_map='<leader>8'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 nmap <F8> :TagbarToggle<CR>
 
