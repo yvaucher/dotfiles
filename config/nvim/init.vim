@@ -31,9 +31,9 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'junegunn/vim-easy-align'
 
 " PEP8 + pylint
-Plugin 'crooloose/syntastic'
-
-Plugin 'majutsushi/tagbar'
+" Async syntax checker for NeoVim and Vim 8
+" A tool that goes snicker-snack on the bad syntax
+Plugin 'w0rp/ale'
 
 " http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
