@@ -1,0 +1,195 @@
+github.com:
+    odoo:
+        orgs:
+            - odoo
+            - OCA
+    enterprise:
+        orgs:
+            - odoo
+            - camptocamp
+        private: True
+    # OCA
+    account-analytic:
+        orgs:
+            - OCA
+            - camptocamp
+    account-budgeting:
+        orgs:
+            - OCA
+            #- camptocamp
+    account-closing:
+        orgs:
+            - OCA
+            - camptocamp
+    account-consolidation:
+        orgs:
+            - OCA
+            - camptocamp
+    account-financial-reporting:
+        orgs:
+            - OCA
+            - camptocamp
+    account-financial-tools:
+        orgs:
+            - OCA
+            - camptocamp
+    account-fiscal-rule:
+        orgs:
+            - OCA
+            - camptocamp
+    account-invoice-reporting:
+        orgs:
+            - OCA
+            - camptocamp
+    account-invoicing:
+        orgs:
+            - OCA
+            - camptocamp
+    account-payment:
+        orgs:
+            - OCA
+            - camptocamp
+    account-reconcile:
+        orgs:
+            - OCA
+            #- camptocamp
+    #apps-store:
+    bank-payment:
+        orgs:
+            - OCA
+            - camptocamp
+    bank-statement-import:
+        orgs:
+            - OCA
+            - camptocamp
+    bank-statement-reconcile:
+        orgs:
+            - OCA
+            - camptocamp
+    carrier-delivery:
+        orgs:
+            - OCA
+            - camptocamp
+    #commission:
+    #community-data-files:
+    connector:
+        orgs:
+            - OCA
+            - camptocamp
+    #connector-accountedge:
+    #connector-cmis:
+    #connector-ecommerce:
+    connector-interfaces:
+        orgs:
+            - OCA
+            - camptocamp
+    #connector-lims:
+    #connector-magento:
+    #connector-prestashop:
+    #connector-redmine:
+    #connector-sage-50:
+    #connector-telephony:
+    #department:
+    #donation:
+    #e-commerce:
+    geospatial:
+        orgs:
+            - OCA
+            - camptocamp
+    #hr:
+    #hr-timesheet
+    #knowledge
+    l10n-belgium:
+        orgs:
+            - OCA
+            - camptocamp
+    #l10n-brazil
+    #l10n-canada
+    #l10n-france
+    #l10n-germany
+    #l10n-italy
+    #l10n-luxemburg
+    #l10n-netherlands
+    l10n-switzerland:
+        orgs:
+            - OCA
+            - camptocamp
+    #maintainer-quality-tools
+    #maintainer-tools
+    #management-system
+    #manifests
+    #manufacture
+    #manufacture-reporting
+    #margin-analysis
+    #mis-builder
+    #multi-company
+    partner-contact:
+        orgs:
+            - OCA
+            - camptocamp
+    #people-list
+    #pos
+    product-attribute:
+        orgs:
+            - OCA
+            - camptocamp
+    #product-kitting
+    #product-variant
+    #program
+    #project
+    #project-reporting
+    #purchase-reporting
+    purchase-workflow:
+        orgs:
+            - OCA
+            - camptocamp
+    #pylint-odoo
+    queue:
+        orgs:
+            - OCA
+            - camptocamp
+    #rebase-sale-workflow
+    #reporting-engine
+    report-print-send:
+        orgs:
+            - OCA
+            - camptocamp
+    #rma
+    #runbot-addons
+    #sale-financial
+    #sale-reporting
+    #sale-workflow
+    #sale-workflow-filter
+    server-env:
+        orgs:
+            - OCA
+            - camptocamp
+    server-tools:
+        orgs:
+            - OCA
+            - camptocamp
+    #stock-logistics-barcode
+    #stock-logistics-reporting
+    #stock-logistics-tracking
+    #stock-logistics-transport
+    stock-logistics-warehouse:
+        orgs:
+            - OCA
+            - camptocamp
+    stock-logistics-workflow:
+        orgs:
+            - OCA
+            - camptocamp
+    #vertical-community
+    #vertical-construction
+    #vertical-edition
+    #vertical-isp
+    #vertical-medical
+    #vertical-ngo
+    #vertical-travel
+    web:
+        orgs:
+            - OCA
+            - camptocamp
+    #webkit-tools
+    #website
