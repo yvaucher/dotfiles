@@ -1,12 +1,12 @@
+" {{{ vundle : Vim plugin manager
+
 " required for vundle
 filetype off
-
-" {{{ vundle : Vim plugin manager
 set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin('~/.config/nvim/bundle')
+call vundle#begin("~/.config/nvim/bundle")
 
 " let Vundle manage Vundle, required!
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " My Bundles here:
 "
@@ -44,9 +44,9 @@ Plugin 'pydoc.vim'
 Plugin 'wombat256.vim'
 
 call vundle#end()
+filetype plugin indent on     " required!
 " }}}
 
-filetype plugin indent on     " required!
 
 " <Leader> is "\"... but on dvorak keyboard it's better to use "," wich is more
 " accessible
