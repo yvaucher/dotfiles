@@ -2,3 +2,7 @@
 .svn
 *~
 .*.swp
+#Vim session
+.Session.vim
+.ctrlp
+.ctrlP
