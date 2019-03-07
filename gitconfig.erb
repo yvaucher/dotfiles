@@ -3,6 +3,8 @@
 	email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
 [alias]
 	co = checkout
+[push]
+	default = simple
 [color]
 	diff = auto
 	status = auto
@@ -11,6 +13,7 @@
 	excludesfile = <%= ENV['HOME'] %>/.gitignore
 	editor = vim
 	autocrlf = input
+	pager = less -R
 [apply]
 	whitespace = nowarn
 [format]
