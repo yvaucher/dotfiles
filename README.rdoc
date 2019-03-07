@@ -67,10 +67,6 @@ Python modules:
   powerline-status
   tmuxp
 
-And Ruby gems:
-
-  tmuxinator (version 0.6.9)
-
 
 == Features
 
